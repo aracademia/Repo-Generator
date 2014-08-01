@@ -1,0 +1,9 @@
+<?php
+/**
+ * User: rrafia
+ */
+namespace {{NAMESPACE}};
+
+class {{CLASS}} extends Eloquent {
+    protected $fillable = [];
+}

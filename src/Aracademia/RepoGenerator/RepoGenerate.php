@@ -42,8 +42,9 @@ class RepoGenerate {
         $templateImplementation = $this->getTemplate($repoImplementation, Config::get('RepoGenerator::template_implementation_path'), $repoInterface);
         $this->filesystem->put(app_path().'/'.$this->rootDir.'/'.$this->repoDir.'/'.$repoImplementation.'.php', $templateImplementation);
 
-        $interfacePath = '/app/'.$this->rootDir.'/'.$this->repoDir.'/'.$repoInterface;
-        $implementationPath = '/app/'.$this->rootDir.'/'.$this->repoDir.'/'.$repoImplementation;
+        $interfacePath = $this->rootDir.'/'.$this->repoDir.'/'.$repoInterface;
+        $implementationPath = $this->rootDir.'/'.$this->repoDir.'/'.$repoImplementation;
+
         $templateServiceProvider = $this->getTemplate($repoServiceProvider, Config::get('RepoGenerator::template_serviceProvider_path'), null, $interfacePath, $implementationPath);
         $this->filesystem->put(app_path().'/'.$this->rootDir.'/'.$this->repoDir.'/'.$repoServiceProvider.'.php', $templateServiceProvider);
     }

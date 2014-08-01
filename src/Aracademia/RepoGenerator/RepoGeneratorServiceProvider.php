@@ -11,6 +11,10 @@ class RepoGeneratorServiceProvider extends ServiceProvider {
 	 */
 	protected $defer = false;
 
+    public function boot()
+    {
+        $this->package('Aracademia/RepoGenerator');
+    }
 	/**
 	 * Register the service provider.
 	 *

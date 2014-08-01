@@ -1,5 +1,6 @@
 <?php namespace Aracademia\RepoGenerator;
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Facades\Config;
 /**
  * Created by PhpStorm.
  * User: rrafia

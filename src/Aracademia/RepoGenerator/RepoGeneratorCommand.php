@@ -94,6 +94,7 @@ class RepoGeneratorCommand extends Command {
             $this->repoGenerate->rootDir = ucfirst($rootDir);
             $this->repoGenerate->repoDir = ucfirst($repoDir);
             $this->repoGenerate->makeDir();
+            $this->info('Generating '.$repoDir.' repository folder...');
         }
         else
         {
@@ -101,6 +102,7 @@ class RepoGeneratorCommand extends Command {
             $this->repoGenerate->rootDir = $rootDir;
             $this->repoGenerate->repoDir = $repoDir;
             $this->repoGenerate->makeDir();
+            $this->info('Generating '.$repoDir.' repository folder...');
         }
     }
     
@@ -111,6 +113,7 @@ class RepoGeneratorCommand extends Command {
             $modelName = $this->ask('What is your model name? ');
 
             $this->repoGenerate->makeModel(ucfirst($modelName));
+            $this->info('Generating '.$modelName.' model...');
         }
     }
     
@@ -123,6 +126,9 @@ class RepoGeneratorCommand extends Command {
             $repoServiceProvider = $this->ask('What is your service provider name? ');
 
             $this->repoGenerate->makeInterfaceImplementationAndServiceProvider($repoInterface, $repoImplementation, $repoServiceProvider);
+
+            $this->info('Done!!!!!');
+
         }
     }
 
